@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: myapp-config
+  namespace: prod
+data:
+  myconfig.conf: |
+    variable=def
+    number=1011
