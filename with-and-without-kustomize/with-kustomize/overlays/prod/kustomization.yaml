@@ -1,0 +1,24 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: prod
+
+resources:
+  - ../../base
+
+patches:
+  - path: app-deployment-patch.yaml
+  - path: app-service-patch.yaml
+  - path: database-deployment-patch.yaml
+
+secretGenerator:
+  - name: db-secret
+    literals:
+      - username=my-prod-username
+      - password=my-prod-password
+
+configMapGenerator:
+  - name: myapp-config
+    literals:
+      - variable=def
+      - number=1011
