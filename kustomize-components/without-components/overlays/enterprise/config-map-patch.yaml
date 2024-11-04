@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: myapp-conf
+data:
+  db.conf: |
+    endpoint=http://db-svc:9090
+    user=admin
+    pass=/var/run/secrets/db/dbpass.txt
+  ldap.conf: |
+    endpoint=ldap://ldap.example.com
+    pass=/var/run/secrets/ldap/ldappass.txt
