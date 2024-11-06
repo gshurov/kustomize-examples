@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: myapp-conf
+data:
+  recaptcha.conf: |
+    enabled=true
+    site_key=/var/run/secrets/recaptcha/site_key.txt
+    secret_key=/var/run/secrets/recaptcha/secret_key.txt
